@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPUTER COMPONENTS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-image: url('header.jpg');
+            min-height: 100vh;
+        }
+        
+        .component-card {
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .component-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .hero-gradient {
+            background: url(header.jpg); 
+            background-size: cover;
+            
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: url(header.jpg);
+            border-radius: 2px;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: url(header.jpg);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .floating-btn {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .progress-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            width: 0%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-900 text-white py-4 px-6 fixed w-full top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-microchip text-blue-400 text-2xl"></i>
+                <span class="text-xl font-bold">TechCompuNents</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#components" class="nav-link">Components</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient text-white pt-24 pb-16 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="floating-btn mb-8">
+                <i class="fas fa-desktop text-6xl text-blue-300 mb-4"></i>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Computer<br>Components
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-blue-100 max-w-3xl mx-auto">
+               Understanding the building blocks of modern computing
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                </button>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Components Grid -->
+    <section id="components" class="py-20 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800 section-title">
+                Essential Computer Components
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- CPU Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-brain text-blue-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">CPU</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/430684a7-adcf-42ed-991c-8984c69ff8c3.png" alt="Modern multi-core processor chip with gold pins and heat spreader on black background" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        The Central Processing Unit (CPU) is the brain of your computer. It executes instructions and processes data, 
+                        determining the overall performance of your system.
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-blue-600 space-y-1">
+                            <li>• Clock Speed (GHz)</li>
+                            <li>• Core Count</li>
+                            <li>• Cache Memory</li>
+                            <li>• Thermal Design Power</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- GPU Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-gamepad text-purple-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">GPU</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/da2e6f4a-031b-49c3-a7bd-3108749be5b7.png" alt="High-end graphics card with multiple fans and RGB lighting in a gaming setup" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        The Graphics Processing Unit (GPU) handles rendering images, videos, and animations. 
+                        Essential for gaming, video editing, and machine learning.
+                    </p>
+                    <div class="bg-purple-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-purple-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-purple-600 space-y-1">
+                            <li>• VRAM Capacity</li>
+                            <li>• CUDA Cores/Stream Processors</li>
+                            <li>• Ray Tracing Support</li>
+                            <li>• Cooling Solution</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- RAM Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-memory text-green-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">RAM</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/aae9896c-0451-482f-a382-78e72e74b4ca.png" alt="DDR4 memory modules with heat spreaders installed on a motherboard" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Random Access Memory (RAM) provides temporary storage for data that the CPU needs to access quickly. 
+                        More RAM allows for better multitasking.
+                    </p>
+                    <div class="bg-green-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-green-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-green-600 space-y-1">
+                            <li>• Capacity (GB)</li>
+                            <li>• Speed (MHz)</li>
+                            <li>• Latency Timings</li>
+                            <li>• DDR Generation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Storage Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-hdd text-red-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Storage</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/2506b1f6-8c56-4652-9ac7-88b8fce2c80f.png" alt="SSD and HDD storage devices showing internal components and connectors" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Storage devices like SSDs and HDDs store your operating system, applications, and files. 
+                        SSDs offer faster speeds while HDDs provide more capacity.
+                    </p>
+                    <div class="bg-red-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-red-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-red-600 space-y-1">
+                            <li>• Read/Write Speeds</li>
+                            <li>• Capacity (TB/GB)</li>
+                            <li>• Interface (SATA/NVMe)</li>
+                            <li>• Form Factor</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Motherboard Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-project-diagram text-yellow-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Motherboard</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a6722721-3733-4947-8f48-b7b25d2914c4.png" alt="Modern ATX motherboard with PCIe slots, RAM slots, and heatsinks" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        The motherboard connects all components together. It determines compatibility and provides 
+                        expansion options for future upgrades.
+                    </p>
+                    <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-yellow-600 space-y-1">
+                            <li>• Chipset</li>
+                            <li>• Socket Type</li>
+                            <li>• Expansion Slots</li>
+                            <li>• Connectivity Options</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PSU Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-bolt text-orange-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Power Supply</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/8c3927e8-da29-4e28-a5bd-9886f427fa20.png" alt="Modular power supply unit with colorful cables and efficiency rating label" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        The Power Supply Unit (PSU) converts AC power to DC and provides stable electricity to all components. 
+                        Quality matters for system stability.
+                    </p>
+                    <div class="bg-orange-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-orange-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-orange-600 space-y-1">
+                            <li>• Wattage</li>
+                            <li>• Efficiency Rating</li>
+                            <li>• Modular Design</li>
+                            <li>• Connector Types</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- PC Case Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-box text-gray-600 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">PC Case</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="PC Case.jpg" alt="Stylish PC case with tempered glass panel and RGB fans" class="w-full h-48 object-cover rounded-lg" />
+                        
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        The PC case houses all the internal components, providing protection, airflow, and aesthetic appeal. 
+                        Comes in various sizes and designs.
+                    </p>
+                    <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Form Factor (ATX, Micro-ATX, Mini-ITX)</li>
+                            <li>• Airflow Design</li>
+                            <li>• Cable Management</li>
+                            <li>• Material (Steel, Aluminum, Tempered Glass)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- CPU Cooler Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-fan text-blue-400 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">CPU Cooler</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="CPU Cooler jpg.webp" alt="High-performance AIO liquid CPU cooler with RGB lighting" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        A CPU cooler dissipates heat generated by the CPU, preventing thermal throttling and ensuring stable performance. 
+                        Can be air or liquid based.
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-blue-600 space-y-1">
+                            <li>• Cooling Type (Air/Liquid)</li>
+                            <li>• TDP Rating</li>
+                            <li>• Fan Size/RPM</li>
+                            <li>• Socket Compatibility</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Network Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-network-wired text-teal-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Network Card</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="network card.jpg" alt="PCIe Wi-Fi 6 network card with external antennas" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        A network card (NIC) enables your computer to connect to a network, either wired (Ethernet) or wireless (Wi-Fi). 
+                        Crucial for internet access.
+                    </p>
+                    <div class="bg-teal-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-teal-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-teal-600 space-y-1">
+                            <li>• Ethernet Speed (Gigabit, 2.5G, 10G)</li>
+                            <li>• Wi-Fi Standard (Wi-Fi 5, Wi-Fi 6, Wi-Fi 6E)</li>
+                            <li>• Bluetooth Support</li>
+                            <li>• Interface (PCIe, USB)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Sound Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-volume-up text-pink-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Sound Card</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="sound card.jpg" alt="Internal PCIe sound card with multiple audio jacks" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        While most motherboards have integrated audio, a dedicated sound card can provide higher fidelity audio 
+                        output and advanced features for audiophiles or professionals.
+                    </p>
+                    <div class="bg-pink-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-pink-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-pink-600 space-y-1">
+                            <li>• Signal-to-Noise Ratio (SNR)</li>
+                            <li>• Surround Sound Support</li>
+                            <li>• Headphone Amplifier</li>
+                            <li>• Connectivity (PCIe, USB)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Optical Drive Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-compact-disc text-indigo-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Optical Drive</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="optical drive.png" alt="Internal Blu-ray optical drive" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        An optical drive reads and writes data to CDs, DVDs, and Blu-ray discs. Less common now, 
+                        but still useful for legacy media or specific software installations.
+                    </p>
+                    <div class="bg-indigo-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-indigo-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-indigo-600 space-y-1">
+                            <li>• Read/Write Speed</li>
+                            <li>• Supported Formats (CD, DVD, Blu-ray)</li>
+                            <li>• Interface (SATA, USB)</li>
+                            <li>• M-Disc Support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Fan Controller Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-sliders-h text-cyan-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Fan Controller</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="fan controller.jpg" alt="Front panel fan controller with multiple knobs and temperature display" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        A fan controller allows manual or automatic adjustment of case fan speeds, optimizing for either 
+                        cooling performance or noise levels.
+                    </p>
+                    <div class="bg-cyan-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-cyan-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-cyan-600 space-y-1">
+                            <li>• Number of Channels</li>
+                            <li>• Control Method (Voltage/PWM)</li>
+                            <li>• Temperature Sensors</li>
+                            <li>• Display Type</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Capture Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-video text-lime-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Capture Card</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="capture card.webp" alt="External USB capture card for gaming consoles" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        A capture card records or streams video from external sources (like game consoles or cameras) 
+                        to your computer. Essential for content creators.
+                    </p>
+                    <div class="bg-lime-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-lime-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-lime-600 space-y-1">
+                            <li>• Resolution & Frame Rate</li>
+                            <li>• Interface (PCIe, USB)</li>
+                            <li>• HDR/VRR Support</li>
+                            <li>• Software Compatibility</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- UPS Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-battery-full text-amber-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">UPS</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="UPS Card.jpg" alt="Uninterruptible Power Supply (UPS) unit with multiple outlets" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        An Uninterruptible Power Supply (UPS) provides battery backup power during outages and protects 
+                        against power surges, safeguarding your system and data.
+                    </p>
+                    <div class="bg-amber-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-amber-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-amber-600 space-y-1">
+                            <li>• VA Rating / Wattage</li>
+                            <li>• Battery Runtime</li>
+                            <li>• Surge Protection</li>
+                            <li>• Number of Outlets</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- KVM Switch Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-exchange-alt text-gray-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">KVM Switch</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="KVM Switch.jpg" alt="KVM switch with multiple input ports for connecting several computers" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        A KVM (Keyboard, Video, Mouse) switch allows you to control multiple computers with a single 
+                        set of keyboard, monitor, and mouse. Ideal for multi-PC setups.
+                    </p>
+                    <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Number of Ports</li>
+                            <li>• Video Resolution Support</li>
+                            <li>• USB Hub Integration</li>
+                            <li>• Switching Method</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Thermal Paste Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-thermometer-half text-red-400 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Thermal Paste</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="thermal paste card.webp" alt="Tube of high-performance thermal paste next to a CPU" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Thermal paste is applied between the CPU and its cooler to improve heat transfer, 
+                        filling microscopic gaps and ensuring efficient cooling.
+                    </p>
+                    <div class="bg-red-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-red-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-red-600 space-y-1">
+                            <li>• Thermal Conductivity</li>
+                            <li>• Viscosity</li>
+                            <li>• Electrical Conductivity (Non-conductive preferred)</li>
+                            <li>• Application Method</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Cable Management Accessories Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-grip-lines text-gray-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Cable Management</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="cable management.png" alt="Various cable ties, velcro straps, and cable combs for PC building" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Accessories like cable ties, velcro straps, and cable combs help organize internal PC cables, 
+                        improving airflow and aesthetics.
+                    </p>
+                    <div class="bg-gray-100 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-gray-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Type (Velcro, Zip Tie, Comb)</li>
+                            <li>• Reusability</li>
+                            <li>• Material</li>
+                            <li>• Size/Length</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- RGB Lighting Controller Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-lightbulb text-yellow-500 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">RGB Controller</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="RGB Controller.jpg" alt="Small RGB lighting controller hub with multiple fan and LED strip connectors" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        An RGB lighting controller manages the colors and effects of addressable RGB (ARGB) or RGB components 
+                        like fans, LED strips, and CPU coolers.
+                    </p>
+                    <div class="bg-yellow-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-yellow-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-yellow-600 space-y-1">
+                            <li>• Number of Channels</li>
+                            <li>• Software Integration</li>
+                            <li>• Lighting Modes</li>
+                            <li>• Compatibility (RGB/ARGB)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Dust Filters Card -->
+                <div class="component-card rounded-2xl p-6 shadow-xl">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-filter text-blue-300 text-3xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Dust Filters</h3>
+                    </div>
+                    <div class="mb-4">
+                        <img src="dust filter.jpg" alt="Magnetic dust filter for PC case fan intake" class="w-full h-48 object-cover rounded-lg" />
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Dust filters prevent dust and debris from entering your PC case, keeping components clean 
+                        and maintaining optimal cooling performance.
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">Key Features:</h4>
+                        <ul class="text-sm text-blue-600 space-y-1">
+                            <li>• Material (Mesh, Nylon)</li>
+                            <li>• Mounting (Magnetic, Screw-in)</li>
+                            <li>• Size Compatibility</li>
+                            <li>• Ease of Cleaning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Components Section -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800 section-title">
+                Peripheral Components
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-100 p-6 rounded-2xl inline-block mb-4">
+                        <i class="fas fa-keyboard text-blue-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Keyboards</h3>
+                    <p class="text-gray-600">Input devices for typing and commands</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-green-100 p-6 rounded-2xl inline-block mb-4">
+                        <i class="fas fa-mouse text-green-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Mice</h3>
+                    <p class="text-gray-600">Pointing devices for navigation</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-purple-100 p-6 rounded-2xl inline-block mb-4">
+                        <i class="fas fa-desktop text-purple-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Monitors</h3>
+                    <p class="text-gray-600">Display output devices</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-red-100 p-6 rounded-2xl inline-block mb-4">
+                        <i class="fas fa-headphones text-red-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Audio</h3>
+                    <p class="text-gray-600">Sound input and output devices</p>
+                </div>
+
+                <!-- Webcam Card -->
+                <div class="text-center">
+                    <div class="bg-yellow-100 p-6 rounded-2xl inline-block mb-4">
+                        <i class="fas fa-camera text-yellow-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Webcams</h3>
+                    <p class="text-gray-600">Video input for calls and streaming</p>
+                </div>
+
+                <!-- Microphone Card -->
+                <div class="text-center">
+                    <div class="bg-teal-100 p-6 rounded-2xl inline-block mb-4">
+                        <i class="fas fa-microphone text-teal-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Microphones</h3>
+                    <p class="text-gray-600">Audio input for voice communication</p>
+                </div>
+
+                <!-- Printer Card -->
+                <div class="text-center">
+                    <div class="bg-orange-100 p-6 rounded-2xl inline-block mb-4">
+                        <i class="fas fa-print text-orange-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Printers</h3>
+                    <p class="text-gray-600">Output devices for hard copies</p>
+                </div>
+
+                <!-- Scanner Card -->
+                <div class="text-center">
+                    <div class="bg-indigo-100 p-6 rounded-2xl inline-block mb-4">
+                        <i class="fas fa-scanner text-indigo-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Scanners</h3>
+                    <p class="text-gray-600">Input devices for digitizing documents</p>
+                </div>
+
+                <!-- VR Headset Card -->
+                <div class="text-center">
+                    <div class="bg-lime-100 p-6 rounded-2xl inline-block mb-4">
+                        <i class="fas fa-vr-cardboard text-lime-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">VR Headsets</h3>
+                    <p class="text-gray-600">Immersive virtual reality displays</p>
+                </div>
+
+                <!-- Game Controller Card -->
+                <div class="text-center">
+                    <div class="bg-pink-100 p-6 rounded-2xl inline-block mb-4">
+                        <i class="fas fa-gamepad text-pink-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Game Controllers</h3>
+                    <p class="text-gray-600">Input devices for gaming</p>
+                </div>
+
+                <!-- Drawing Tablet Card -->
+                <div class="text-center">
+                    <div class="bg-purple-100 p-6 rounded-2xl inline-block mb-4">
+                        <i class="fas fa-pen-nib text-purple-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Drawing Tablets</h3>
+                    <p class="text-gray-600">Input devices for digital art and design</p>
+                </div>
+
+                <!-- External Hard Drive Card -->
+                <div class="text-center">
+                    <div class="bg-blue-100 p-6 rounded-2xl inline-block mb-4">
+                        <i class="fas fa-save text-blue-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">External Drives</h3>
+                    <p class="text-gray-600">Portable storage for backups and data transfer</p>
+                </div>
+
+                <!-- USB Hub Card -->
+                <div class="text-center">
+                    <div class="bg-green-100 p-6 rounded-2xl inline-block mb-4">
+                        <i class="fas fa-usb text-green-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">USB Hubs</h3>
+                    <p class="text-gray-600">Expands available USB ports</p>
+                </div>
+
+                <!-- Card Reader Card -->
+                <div class="text-center">
+                    <div class="bg-red-100 p-6 rounded-2xl inline-block mb-4">
+                        <i class="fas fa-sd-card text-red-600 text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Card Readers</h3>
+                    <p class="text-gray-600">Reads various memory card formats</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8 section-title">About</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">
+                Understanding Computer Architecture
+
+Knowing how computers work is fundamental for every computer science student and professional.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 mt-12">
+                <div class="text-center">
+                    <div class="bg-blue-600 p-4 rounded-full inline-block mb-4">
+                        <i class="fas fa-book text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Educational</h3>
+                    <p>Learn about each component's purpose and specifications</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-green-600 p-4 rounded-full inline-block mb-4">
+                        <i class="fas fa-tools text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Practical</h3>
+                    <p>Get practical advice for component selection and compatibility</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-600 p-4 rounded-full inline-block mb-4">
+                        <i class="fas fa-chart-line text-3xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-8">
+            <div>
+                <div class="flex items-center space-x-2 mb-4">
+                    <i class="fas fa-microchip text-blue-400 text-2xl"></i>
+                    <span class="text-xl font-bold">TechCompuNents</span>
+                </div>
+                <p class="text-gray-400">
+                    Your complete guide to understanding computer hardware components and building better systems.
+                </p>
+            </div>
+            
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                    <li><a href="#components" class="text-gray-400 hover:text-white transition">Components</a></li>
+                    <li><a href="#about" class="text-gray-400 hover:text-white transition">About</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Resources</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Compatibility</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition">Performance</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h3 class="text-lg font-semibold mb-4">Contact</h3>
+                <div class="space-y-2">
+                    <p class="text-gray-400">Email: CompuNents.com</p>
+                    <p class="text-gray-400">Phone: +63 (143)*******</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto border-t border-gray-700 mt-8 pt-8 text-center">
+            <p class="text-gray-400">© 2025 CompuNents. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Progress bar functionality
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+    </script>
+</body>
+</html>
